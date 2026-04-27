@@ -15,7 +15,7 @@ html2text
 jq
 jsonpath-ng
 jsonschema
-odg-client
+odg-client>=0.4.0
 pycryptodome
 pyjwt
 pylama

@@ -276,6 +276,7 @@ def delivery_service_component_descriptor_lookup(
                     name=component_id.name,
                     version=component_id.version,
                     ocm_repo_url=ocm_repo.oci_ref if ocm_repo else None,
+                    ignore_lookup=ocm_repo is not None, # don't use lookup if `ocm_repo` is specified
                 )
 
                 if component_descriptor:
