@@ -34,14 +34,17 @@ def test_access_type_aliases():
 def test_artefact_type_aliases():
     aliases = {
         'blob': ocm.ArtefactType.BLOB,
+        'blob/v1': ocm.ArtefactType.BLOB,
         'executable': ocm.ArtefactType.EXECUTABLE,
         'directoryTree': ocm.ArtefactType.DIRECTORY_TREE,
         'filesystem': ocm.ArtefactType.DIRECTORY_TREE,
         'git': ocm.ArtefactType.GIT,
         'git/v1': ocm.ArtefactType.GIT,
         'helmChart': ocm.ArtefactType.HELM_CHART,
+        'helmChart/v1': ocm.ArtefactType.HELM_CHART,
         'npmPackage': ocm.ArtefactType.NPM_PACKAGE,
         'ociArtifact': ocm.ArtefactType.OCI_ARTEFACT,
+        'ociArtifact/v1': ocm.ArtefactType.OCI_ARTEFACT,
         'ociImage': ocm.ArtefactType.OCI_IMAGE,
         'ociImage/v1': ocm.ArtefactType.OCI_IMAGE,
         'sbom': ocm.ArtefactType.SBOM,

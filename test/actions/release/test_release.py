@@ -249,7 +249,7 @@ def test_asset_type_in_id_no_match():
         name='img',
         mime_type=None,
         type='ocm-resource',
-        id={'name': 'img', 'type': 'blob/v1'},
+        id={'name': 'img', 'type': 'blob'},
     )
     resource = ocm.Resource(
         name='img',

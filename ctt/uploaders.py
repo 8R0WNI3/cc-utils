@@ -258,7 +258,7 @@ class ExtraTagUploader(UploaderBase):
                 tag_expressions:
                     - '{resource.version}'
                 excluded_artefact_types:
-                    - blob/v1
+                    - blob
     ```
     '''
     def __init__(

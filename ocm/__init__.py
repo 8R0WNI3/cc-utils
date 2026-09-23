@@ -234,14 +234,14 @@ class NPMAccess(Access):
 
 
 class ArtefactType(enum.StrEnum):
-    BLOB = 'blob/v1'
+    BLOB = 'blob'
     COSIGN_SIGNATURE = 'cosignSignature'
     DIRECTORY_TREE = 'directoryTree'
     EXECUTABLE = 'executable'
     GIT = 'git'
-    HELM_CHART = 'helmChart/v1'
+    HELM_CHART = 'helmChart'
     NPM_PACKAGE = 'npmPackage'
-    OCI_ARTEFACT = 'ociArtifact/v1'
+    OCI_ARTEFACT = 'ociArtifact'
     OCI_IMAGE = 'ociImage'
     SBOM = 'sbom'
 
@@ -249,17 +249,20 @@ class ArtefactType(enum.StrEnum):
 # hack: patch enum to accept "aliases"
 # -> the values defined in enum above will be  used for serialisation; the aliases are also
 # accepted for deserialisation
-# note: the `/v1` suffix is _always_ optional (if absent, /v1 is implied)
+# canonical values are bare (no /v1); aliases preserve backward-compat with serialized /v1 forms
 ArtefactType._value2member_map_ |= {
     'blob': ArtefactType.BLOB,
+    'blob/v1': ArtefactType.BLOB,
     'executable': ArtefactType.EXECUTABLE,
     'directoryTree': ArtefactType.DIRECTORY_TREE,
     'filesystem': ArtefactType.DIRECTORY_TREE,
     'git': ArtefactType.GIT,
     'git/v1': ArtefactType.GIT,
     'helmChart': ArtefactType.HELM_CHART,
+    'helmChart/v1': ArtefactType.HELM_CHART,
     'npmPackage': ArtefactType.NPM_PACKAGE,
     'ociArtifact': ArtefactType.OCI_ARTEFACT,
+    'ociArtifact/v1': ArtefactType.OCI_ARTEFACT,
     'ociImage': ArtefactType.OCI_IMAGE,
     'ociImage/v1': ArtefactType.OCI_IMAGE,
     'sbom': ArtefactType.SBOM,
